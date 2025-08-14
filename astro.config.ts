@@ -25,7 +25,7 @@ import config from './src/site.config.ts'
 // https://astro.build/config
 export default defineConfig({
   // Top-Level Options
-  site: 'https://astro-pure.js.org',
+  site: 'https://vapor3.art',
   // base: '/docs',
   trailingSlash: 'never',
 
@@ -86,8 +86,8 @@ export default defineConfig({
     // https://docs.astro.build/en/guides/syntax-highlighting/
     shikiConfig: {
       themes: {
-        light: 'github-light',
-        dark: 'github-dark'
+        light: 'vitesse-light',
+        dark: 'vitesse-dark'
       },
       transformers: [
         transformerNotationDiff(),
