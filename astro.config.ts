@@ -4,6 +4,7 @@ import AstroPureIntegration from 'astro-pure'
 import { defineConfig } from 'astro/config'
 import rehypeKatex from 'rehype-katex'
 import remarkMath from 'remark-math'
+import AstroIcon from 'astro-icon'
 
 // Others
 // import { visualizer } from 'rollup-plugin-visualizer'
@@ -21,6 +22,7 @@ import {
   updateStyle
 } from './src/plugins/shiki-transformers.ts'
 import config from './src/site.config.ts'
+
 
 // https://astro.build/config
 export default defineConfig({
@@ -51,6 +53,7 @@ export default defineConfig({
     // astro-pure will automatically add sitemap, mdx & unocss
     // sitemap(),
     // mdx(),
+    AstroIcon(),
     AstroPureIntegration(config)
     // (await import('@playform/compress')).default({
     //   SVG: false,
