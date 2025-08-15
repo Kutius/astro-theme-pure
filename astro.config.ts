@@ -1,9 +1,9 @@
-import cloudflare from '@astrojs/cloudflare'
 import { rehypeHeadingIds } from '@astrojs/markdown-remark'
-import vercel from '@astrojs/vercel'
+import netlify from '@astrojs/netlify'
+// import vercel from '@astrojs/vercel'
 import AstroIcon from 'astro-icon'
 import AstroPureIntegration from 'astro-pure'
-import { defineConfig, passthroughImageService } from 'astro/config'
+import { defineConfig } from 'astro/config'
 import rehypeKatex from 'rehype-katex'
 import remarkMath from 'remark-math'
 
@@ -42,16 +42,14 @@ export default defineConfig({
   // adapter: node({ mode: 'standalone' }),
   // output: 'server',
   // ---
-  adapter: cloudflare({
-    imageService: 'cloudflare',
-  }),
+  adapter: netlify(),
   output: 'server',
 
   image: {
-    // service: {
-    //   entrypoint: 'astro/assets/services/sharp',
-    // },
-    service: passthroughImageService(),
+    service: {
+      entrypoint: 'astro/assets/services/sharp',
+    },
+    // service: passthroughImageService(),
   },
 
   integrations: [
