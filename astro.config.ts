@@ -1,10 +1,11 @@
+import cloudflare from '@astrojs/cloudflare'
 import { rehypeHeadingIds } from '@astrojs/markdown-remark'
 import vercel from '@astrojs/vercel'
+import AstroIcon from 'astro-icon'
 import AstroPureIntegration from 'astro-pure'
-import { defineConfig } from 'astro/config'
+import { defineConfig, passthroughImageService } from 'astro/config'
 import rehypeKatex from 'rehype-katex'
 import remarkMath from 'remark-math'
-import AstroIcon from 'astro-icon'
 
 // Others
 // import { visualizer } from 'rollup-plugin-visualizer'
@@ -19,10 +20,9 @@ import {
   addTitle,
   transformerNotationDiff,
   transformerNotationHighlight,
-  updateStyle
+  updateStyle,
 } from './src/plugins/shiki-transformers.ts'
 import config from './src/site.config.ts'
-
 
 // https://astro.build/config
 export default defineConfig({
@@ -34,19 +34,24 @@ export default defineConfig({
   // Adapter
   // https://docs.astro.build/en/guides/deploy/
   // 1. Vercel (serverless)
-  adapter: vercel(),
-  output: 'server',
+  // adapter: vercel(),
+  // output: 'server',
   // 2. Vercel (static)
   // adapter: vercelStatic(),
   // 3. Local (standalone)
   // adapter: node({ mode: 'standalone' }),
   // output: 'server',
   // ---
+  adapter: cloudflare({
+    imageService: 'cloudflare',
+  }),
+  output: 'server',
 
   image: {
-    service: {
-      entrypoint: 'astro/assets/services/sharp'
-    }
+    // service: {
+    //   entrypoint: 'astro/assets/services/sharp',
+    // },
+    service: passthroughImageService(),
   },
 
   integrations: [
@@ -54,7 +59,7 @@ export default defineConfig({
     // sitemap(),
     // mdx(),
     AstroIcon(),
-    AstroPureIntegration(config)
+    AstroPureIntegration(config),
     // (await import('@playform/compress')).default({
     //   SVG: false,
     //   Exclude: ['index.*.js']
@@ -69,7 +74,7 @@ export default defineConfig({
   prefetch: true,
   // Server Options
   server: {
-    host: true
+    host: true,
   },
   // Markdown Options
   markdown: {
@@ -82,15 +87,15 @@ export default defineConfig({
         {
           behavior: 'append',
           properties: { className: ['anchor'] },
-          content: { type: 'text', value: '#' }
-        }
-      ]
+          content: { type: 'text', value: '#' },
+        },
+      ],
     ],
     // https://docs.astro.build/en/guides/syntax-highlighting/
     shikiConfig: {
       themes: {
         light: 'vitesse-light',
-        dark: 'vitesse-dark'
+        dark: 'vitesse-dark',
       },
       transformers: [
         transformerNotationDiff(),
@@ -98,12 +103,12 @@ export default defineConfig({
         updateStyle(),
         addTitle(),
         addLanguage(),
-        addCopyButton(2000)
-      ]
-    }
+        addCopyButton(2000),
+      ],
+    },
   },
   experimental: {
-    contentIntellisense: true
+    contentIntellisense: true,
   },
   vite: {
     plugins: [
@@ -111,6 +116,6 @@ export default defineConfig({
       //     emitFile: true,
       //     filename: 'stats.html'
       //   })
-    ]
-  }
+    ],
+  },
 })
