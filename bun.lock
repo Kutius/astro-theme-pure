@@ -23,7 +23,7 @@
       "devDependencies": {
         "@antfu/eslint-config": "^5.2.1",
         "@ianvs/prettier-plugin-sort-imports": "^4.4.2",
-        "@iconify-json/skill-icons": "^1.2.3",
+        "@iconify-json/devicon": "^1.2.41",
         "@typescript-eslint/parser": "^8.33.0",
         "@unocss/eslint-plugin": "^66.4.2",
         "astro-eslint-parser": "^1.2.2",
@@ -190,7 +190,7 @@
 
     "@ianvs/prettier-plugin-sort-imports": ["@ianvs/prettier-plugin-sort-imports@4.4.2", "https://registry.npmmirror.com/@ianvs/prettier-plugin-sort-imports/-/prettier-plugin-sort-imports-4.4.2.tgz", { "dependencies": { "@babel/generator": "^7.26.2", "@babel/parser": "^7.26.2", "@babel/traverse": "^7.25.9", "@babel/types": "^7.26.0", "semver": "^7.5.2" }, "peerDependencies": { "@vue/compiler-sfc": "2.7.x || 3.x", "prettier": "2 || 3 || ^4.0.0-0" }, "optionalPeers": ["@vue/compiler-sfc"] }, "sha512-KkVFy3TLh0OFzimbZglMmORi+vL/i2OFhEs5M07R9w0IwWAGpsNNyE4CY/2u0YoMF5bawKC2+8/fUH60nnNtjw=="],
 
-    "@iconify-json/skill-icons": ["@iconify-json/skill-icons@1.2.3", "https://registry.npmmirror.com/@iconify-json/skill-icons/-/skill-icons-1.2.3.tgz", { "dependencies": { "@iconify/types": "*" } }, "sha512-wyoP8uwox80jEi1ABZ3Z+I+ETtIr2brAERPPDzpJ9iALk8hyeg4/kdoC7M8HduhNkSkyq5kwBF8xvbqjNldnBQ=="],
+    "@iconify-json/devicon": ["@iconify-json/devicon@1.2.41", "https://registry.npmmirror.com/@iconify-json/devicon/-/devicon-1.2.41.tgz", { "dependencies": { "@iconify/types": "*" } }, "sha512-4hCbtXRkdwbzemxVc7+6LQT0cOQaD1SHZpElhuV0YC5JfUqBu7T5ejRcjgim1lJO888Mj0WSp4th1eUhDEChUg=="],
 
     "@iconify/tools": ["@iconify/tools@4.1.2", "https://registry.npmmirror.com/@iconify/tools/-/tools-4.1.2.tgz", { "dependencies": { "@iconify/types": "^2.0.0", "@iconify/utils": "^2.3.0", "@types/tar": "^6.1.13", "axios": "^1.8.3", "cheerio": "1.0.0", "domhandler": "^5.0.3", "extract-zip": "^2.0.1", "local-pkg": "^0.5.1", "pathe": "^1.1.2", "svgo": "^3.3.2", "tar": "^6.2.1" } }, "sha512-q6NzLQYEN9zkDfcyBqD3vItHcZw97w/s++3H3TBxUORr57EfHxj6tOW6fyufDjMq+Vl56WXWaPx1csBPYlI5CA=="],
 
