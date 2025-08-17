@@ -19,13 +19,13 @@ export const theme: ThemeUserConfig = {
     dateOptions: {
       day: 'numeric',
       month: 'short',
-      year: 'numeric'
-    }
+      year: 'numeric',
+    },
   },
   /** Set a logo image to show in the homepage. */
   logo: {
     src: 'src/assets/avatar.png',
-    alt: 'Avatar'
+    alt: 'Avatar',
   },
 
   // === Global configuration ===
@@ -50,8 +50,8 @@ export const theme: ThemeUserConfig = {
       { title: 'Blog', link: '/blog' },
       { title: 'Projects', link: '/projects' },
       { title: 'Links', link: '/links' },
-      { title: 'About', link: '/about' }
-    ]
+      { title: 'About', link: '/about' },
+    ],
   },
 
   /** Configure the footer of your site. */
@@ -69,7 +69,11 @@ export const theme: ThemeUserConfig = {
     /** Enable displaying a “Astro & Pure theme powered” link in your site’s footer. */
     credits: false,
     /** Optional details about the social media accounts for this site. */
-    social: { github: 'https://github.com/kutius' }
+    social: {
+      email: 'mailto:precious.wei@qq.com',
+      github: 'https://github.com/kutius',
+      steam: 'https://steamcommunity.com/profiles/76561198438622263/',
+    },
   },
 
   content: {
@@ -78,8 +82,8 @@ export const theme: ThemeUserConfig = {
     blogPageSize: 8,
     externalLinkArrow: true, // show external link arrow
     // Currently support weibo, x, bluesky
-    share: ['x', 'bluesky']
-  }
+    share: ['x', 'bluesky'],
+  },
 }
 
 export const integ: IntegrationUserConfig = {
@@ -95,8 +99,8 @@ export const integ: IntegrationUserConfig = {
       { name: 'Name', val: theme.title },
       { name: 'Desc', val: 'Life\'s map has two poles, but a thousand bewildering paths lie between them' },
       { name: 'Link', val: 'https://vapor3.art' },
-      { name: 'Avatar', val: 'https://avatars.githubusercontent.com/u/43736711' }
-    ]
+      { name: 'Avatar', val: 'https://avatars.githubusercontent.com/u/43736711' },
+    ],
   },
   // Enable page search function
   pagefind: true,
@@ -105,7 +109,7 @@ export const integ: IntegrationUserConfig = {
   quote: {
     // https://developer.hitokoto.cn/sentence/#%E8%AF%B7%E6%B1%82%E5%9C%B0%E5%9D%80
     server: 'https://v1.hitokoto.cn/?c=i',
-    target: `(data) => data.hitokoto || 'Error'`
+    target: `(data) => data.hitokoto || 'Error'`,
     // https://github.com/lukePeavey/quotable
     // server: 'https://api.quotable.io/quotes/random?maxLength=60',
     // target: `(data) => data[0].content || 'Error'`
@@ -117,7 +121,7 @@ export const integ: IntegrationUserConfig = {
     // The style of blockquote font, normal or italic (default to italic in typography)
     blockquoteStyle: 'italic',
     // The style of inline code block, code or modern (default to code in typography)
-    inlineCodeBlockStyle: 'modern'
+    inlineCodeBlockStyle: 'modern',
   },
   // A lightbox library that can add zoom effect
   // See: https://astro-pure.js.org/docs/integrations/others#medium-zoom
@@ -125,14 +129,14 @@ export const integ: IntegrationUserConfig = {
     enable: true, // disable it will not load the whole library
     selector: '.prose .zoomable',
     options: {
-      className: 'zoomable'
-    }
+      className: 'zoomable',
+    },
   },
   // Comment system
   waline: {
-    enable: true,
+    enable: false,
     // Server service link
-    server: 'https://astro-theme-pure-waline.arthals.ink/',
+    // server: 'https://astro-theme-pure-waline.arthals.ink/',
     // Refer https://waline.js.org/en/guide/features/emoji.html
     emoji: ['bmoji', 'weibo'],
     // Refer https://waline.js.org/en/reference/client/props.html
@@ -142,11 +146,11 @@ export const integ: IntegrationUserConfig = {
       comment: true,
       locale: {
         reaction0: 'Like',
-        placeholder: 'Welcome to comment. (Email to receive replies. Login is unnecessary)'
+        placeholder: 'Welcome to comment. (Email to receive replies. Login is unnecessary)',
       },
-      imageUploader: false
-    }
-  }
+      imageUploader: false,
+    },
+  },
 }
 
 const config = { ...theme, integ } as Config
