@@ -46,6 +46,7 @@ export default defineConfig({
   output: 'server',
 
   image: {
+    domains: ['ghchart.rshah.org'],
     service: {
       entrypoint: 'astro/assets/services/sharp',
     },
