@@ -11,8 +11,35 @@
   font-style: italic;
   font-display: swap;
 }
+
+/* noto-sans-sc-chinese-simplified-400-normal */
+@font-face {
+  font-family: 'Noto Sans SC';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/noto-sans-sc@latest/chinese-simplified-400-normal.woff2) format('woff2');
+}
+/* noto-sans-sc-chinese-simplified-700-normal */
+@font-face {
+  font-family: 'Noto Sans SC';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/noto-sans-sc@latest/chinese-simplified-700-normal.woff2) format('woff2');
+}
+
+/* maple-mono-latin-400-normal */
+@font-face {
+  font-family: 'Maple Mono';
+  font-style: normal;
+  font-display: optional;
+  font-weight: 400;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/maple-mono@latest/latin-400-normal.woff2) format('woff2');
+}
+
 html {
-  font-family: 'Satoshi', sans-serif;
+  font-family: 'Satoshi', 'Noto Sans SC', sans-serif;
 }
 
 /* Theme */
