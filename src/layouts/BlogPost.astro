@@ -2,14 +2,13 @@
 import type { MarkdownHeading } from 'astro'
 import type { CollectionEntry } from 'astro:content'
 
-// Plugin styles
-import 'katex/dist/katex.min.css'
-
 import { MediumZoom } from 'astro-pure/advanced'
+
 import { ArticleBottom, Copyright, Hero, TOC } from 'astro-pure/components/pages'
 import PageLayout from '@/layouts/ContentLayout.astro'
-import { Comment, PageInfo } from '@/components/waline'
 import { integ } from '@/site-config'
+// Plugin styles
+import 'katex/dist/katex.min.css'
 
 interface Props {
   post: CollectionEntry<'blog'>
@@ -22,7 +21,7 @@ const {
   post: { id, data },
   posts,
   headings,
-  remarkPluginFrontmatter
+  remarkPluginFrontmatter,
 } = Astro.props
 
 const {
@@ -32,7 +31,6 @@ const {
   title,
   updatedDate,
   draft: isDraft,
-  comment: enableComment
 } = data
 
 const socialImage = heroImage
@@ -47,28 +45,28 @@ const primaryColor = data.heroImage?.color ?? 'hsl(var(--primary) / var(--un-tex
 <PageLayout
   meta={{ articleDate, description, ogImage: socialImage, title }}
   highlightColor={primaryColor}
-  back='/blog'
+  back="/blog"
 >
-  {!!headings.length && <TOC {headings} slot='sidebar' />}
+  {!!headings.length && <TOC {headings} slot="sidebar" />}
 
-  <Hero {data} {remarkPluginFrontmatter} slot='header'>
-    <Fragment slot='description'>
-      {!isDraft && enableComment && <PageInfo comment class='mt-1' />}
+  <Hero {data} {remarkPluginFrontmatter} slot="header">
+    <Fragment slot="description">
+      {/* {!isDraft && enableComment && <PageInfo comment class='mt-1' />} */}
     </Fragment>
   </Hero>
 
   <slot />
 
-  <Fragment slot='bottom'>
+  <Fragment slot="bottom">
     {/* Copyright */}
     <Copyright {data} />
     {/* Article recommend */}
-    <ArticleBottom collections={posts} {id} class='mt-3 sm:mt-6' />
+    <ArticleBottom collections={posts} {id} class="mt-3 sm:mt-6" />
     {/* Comment */}
-    {!isDraft && enableComment && <Comment class='mt-3 sm:mt-6' />}
+    {/* {!isDraft && enableComment && <Comment class='mt-3 sm:mt-6' />} */}
   </Fragment>
 
-  <slot name='bottom-sidebar' slot='bottom-sidebar' />
+  <slot name="bottom-sidebar" slot="bottom-sidebar" />
 </PageLayout>
 
 {integ.mediumZoom.enable && <MediumZoom />}
