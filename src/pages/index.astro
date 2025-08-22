@@ -28,18 +28,22 @@ const frontend = [
   { name: 'Nuxt.js', icon: 'devicon:nuxtjs' },
   { name: 'Next.js', icon: 'devicon:nextjs' },
   { name: 'Vite', icon: 'devicon:vitejs' },
+  { name: 'Vitest', icon: 'devicon:vitest' },
+  { name: 'Playwright', icon: 'devicon:playwright' },
   { name: 'Tailwind CSS', icon: 'devicon:tailwindcss' },
   { name: 'UnoCSS' },
-  { name: 'Shadcn UI' },
+  { name: 'Tanstack Start' },
 ]
 const backend = [
   { name: 'Node.js', icon: 'devicon:nodejs' },
   { name: 'Nest.js', icon: 'devicon:nestjs' },
   { name: 'MongoDB', icon: 'devicon:mongodb' },
-  { name: 'Vercel', icon: 'devicon:vercel' },
   { name: 'Cloudflare', icon: 'devicon:cloudflare' },
   { name: 'Netlify', icon: 'devicon:netlify' },
+  { name: 'Vercel', icon: 'devicon:vercel' },
   { name: 'Supabase', icon: 'devicon:supabase' },
+  { name: 'Prisma', icon: 'devicon:prisma' },
+  { name: 'Drizzle' },
 ]
 const native = [
   { name: 'React Native', icon: 'devicon:expo' },
@@ -47,6 +51,7 @@ const native = [
   { name: 'Electron', icon: 'devicon:electron' },
   { name: 'Tauri', icon: 'devicon:tauri' },
   { name: 'Ionic', icon: 'devicon:ionic' },
+  { name: 'KMP', icon: 'devicon:jetpackcompose' },
 ]
 
 const MAX_POSTS = 10
@@ -106,7 +111,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
         <p class="text-muted-foreground">
           A developer and designer passionate about open source and crafting elegant solutions. I love building with modern web technologies. This is my digital garden where I share my journey, projects, and thoughts.
         </p>
-        <Button title='More about me' class='w-fit self-end' href='/about' variant='ahead' />
+        <Button title="More about me" class="w-fit self-end" href="/about" variant="ahead" />
       </Section>
       {
         allPostsByDate.length > 0 && (
@@ -118,7 +123,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
                 </li>
               ))}
             </ul>
-            <Button title='More posts' class='w-fit self-end' href='/blog' variant='ahead' />
+            <Button title="More posts" class="w-fit self-end" href="/blog" variant="ahead" />
           </Section>
         )
       }
