@@ -8,7 +8,6 @@ import ProjectSection from '@/components/projects/ProjectSection.astro'
 import Sponsors from '@/components/projects/Sponsors.astro'
 import Sponsorship from '@/components/projects/Sponsorship.astro'
 import PageLayout from '@/layouts/CommonPage.astro'
-import config from '@/site-config'
 
 const headings = [
   // { depth: 2, slug: 'theme', text: 'Theme' },
@@ -18,7 +17,7 @@ const headings = [
 ]
 ---
 
-<PageLayout title="Projects" {headings} info={{ slug: '/projects', hideComment: true }}>
+<PageLayout title='Projects' {headings} view>
   <p>Github Activities:</p>
   <p>
     <Image
@@ -151,23 +150,6 @@ const headings = [
     ]}
   /> -->
 </PageLayout>
-
-<!-- <script
-  is:inline
-  type="module"
-  data-astro-rerun
-  define:vars={{ npmCDN: config.npmCDN, walineServer: config.integ.waline.server }}
->
-async function loadPageviewCount() {
-  const pageview = await import(`${npmCDN}/@waline/client@v3/dist/pageview.js`)
-  pageview.pageviewCount({
-    serverURL: walineServer,
-    path: window.location.pathname,
-  })
-}
-
-await loadPageviewCount()
-</script> -->
 
 <style>
   .sponsorship-card {
